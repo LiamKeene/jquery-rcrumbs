@@ -1,11 +1,11 @@
 /* jQuery responsive breadcrumbs plugin jQuery plugin
  * https://github.com/cm0s/jquery-rcrumbs
  *
- * Copyright (c) 2014, Nicolas Forney 
+ * Copyright (c) 2016, Nicolas Forney 
  * Released under the MIT licence 
  *
  * version: 1.1.0 
- * 2014/02/28
+ * 2016/06/25
  */
 (function ($, window, document, undefined) {
   'use strict';
@@ -73,7 +73,7 @@
         var that = this;
         $('li', this.$crumbsList).slice(0, this.options.nbFixedCrumbs).each(function (index, crumb) {
           that.totalCrumbsWidth += $(crumb).data('width');
-          $(crumb).addClass('show');
+          $(crumb).addClass('show-crumb');
         });
       }
 
@@ -193,7 +193,7 @@
           if (this.lastNbCrumbDisplayed > this.nbCrumbDisplayed - 1 && this.options.animation.activated) {
             hideCrumbWithAnimation();
           } else {
-            $crumb.removeClass('show');
+            $crumb.removeClass('show-crumb');
           }
 
           if (!this.nextCrumbToShowWidth) {
@@ -203,7 +203,7 @@
       }
 
       function showCrumbWithOrWithoutAnimation() {
-        $crumb.addClass('show');
+        $crumb.addClass('show-crumb');
 
         if (that.lastNbCrumbDisplayed < (that.nbCrumbDisplayed + 1) && that.options.animation.activated && !disableAnimation) {
           $crumb.width(0);
@@ -218,7 +218,7 @@
 
       function hideCrumbWithAnimation() {
         $crumb.animate({width: 0}, that.options.animation.speed, function () {
-          $crumb.removeClass('show');
+          $crumb.removeClass('show-crumb');
         });
       }
 

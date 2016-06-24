@@ -16,7 +16,7 @@ html {
   overflow: hidden;
   display: none;
 }
-.rcrumbs > ul > li.show {
+.rcrumbs > ul > li.show-crumb {
   display: inline-block;
 }
 .rcrumbs > ul > li.ellipsis {
