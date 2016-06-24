@@ -164,7 +164,7 @@
       nbFixedCrumbs: 1
     });
     var firstCrumb = $('li', $element).first();
-    equal(firstCrumb.hasClass('show'), true, 'first li element should have the class [show]');
+    equal(firstCrumb.hasClass('show-crumb'), true, 'first li element should have the class [show-crumb]');
   });
 
   test('nbFixedCrumbs:3 => the three crumbs must be visible', function () {
@@ -176,15 +176,15 @@
     var firstCrumb = $('li', $element).first(),
       secondCrumb = $('li:nth-child(2)', $element),
       thirdCrumb = $('li:nth-child(3)', $element);
-    equal(firstCrumb.hasClass('show'), true, 'first li element should have the class [show]');
-    equal(secondCrumb.hasClass('show'), true, 'second li element should have the class [show]');
-    equal(thirdCrumb.hasClass('show'), true, 'third li element should have the class [show]');
+    equal(firstCrumb.hasClass('show-crumb'), true, 'first li element should have the class [show-crumb]');
+    equal(secondCrumb.hasClass('show-crumb'), true, 'second li element should have the class [show-crumb]');
+    equal(thirdCrumb.hasClass('show-crumb'), true, 'third li element should have the class [show-crumb]');
   });
 
   function nbCrumbDisplayed() {
     var nbCrumb = 0;
     $.each($('li', this.$element), function (index, value) {
-      if ($(this).hasClass('show')) {
+      if ($(this).hasClass('show-crumb')) {
         nbCrumb += 1;
       }
     });

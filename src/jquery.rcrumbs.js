@@ -72,7 +72,7 @@
         var that = this;
         $('li', this.$crumbsList).slice(0, this.options.nbFixedCrumbs).each(function (index, crumb) {
           that.totalCrumbsWidth += $(crumb).data('width');
-          $(crumb).addClass('show');
+          $(crumb).addClass('show-crumb');
         });
       }
 
@@ -192,7 +192,7 @@
           if (this.lastNbCrumbDisplayed > this.nbCrumbDisplayed - 1 && this.options.animation.activated) {
             hideCrumbWithAnimation();
           } else {
-            $crumb.removeClass('show');
+            $crumb.removeClass('show-crumb');
           }
 
           if (!this.nextCrumbToShowWidth) {
@@ -202,7 +202,7 @@
       }
 
       function showCrumbWithOrWithoutAnimation() {
-        $crumb.addClass('show');
+        $crumb.addClass('show-crumb');
 
         if (that.lastNbCrumbDisplayed < (that.nbCrumbDisplayed + 1) && that.options.animation.activated && !disableAnimation) {
           $crumb.width(0);
@@ -217,7 +217,7 @@
 
       function hideCrumbWithAnimation() {
         $crumb.animate({width: 0}, that.options.animation.speed, function () {
-          $crumb.removeClass('show');
+          $crumb.removeClass('show-crumb');
         });
       }
 

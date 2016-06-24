@@ -165,7 +165,7 @@
   function nbCrumbDisplayed() {
     var nbCrumb = 0;
     $.each($('li', this.$element), function (index, value) {
-      if ($(this).hasClass('show')) {
+      if ($(this).hasClass('show-crumb')) {
         nbCrumb += 1;
       }
     });
